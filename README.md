@@ -7,7 +7,7 @@ python3.11 -m venv venv
 source venv/bin/activate
 pip install poetry
 poetry config virtualenvs.create false
-pip install git+https://github.com/giotto-ai/giotto-arc-agi-data
+poetry install git+https://github.com/giotto-ai/giotto-arc-agi-data
 ```
 
 ## Dataset

@@ -3,8 +3,8 @@ name = "giotto-arc-data"
 version = "0.0.1"
 description = "Utils for reading synthetic ARC-AGI dataset by Giotto.ai."
 authors = [
-    {name = 'Matteo Caorsi', email = "m.caorsi@giotto.ai"},
-    {name = 'Matteo Bonotto', email = "m.bonotto@giotto.ai"},
+    "Matteo Caorsi <m.caorsi@giotto.ai>",
+    "Matteo Bonotto <m.bonotto@giotto.ai>",
 ]
 
 [build-system]
