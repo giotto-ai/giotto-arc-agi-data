@@ -1,4 +1,4 @@
-# Giotto Arc Data
+# Giotto ARC-AGI Data
 Official repository to access the Giotto Arc Dataset. The dataset is hosted at Zenodo ([here](https://zenodo.org/records/18508333)) and is publicly available via [this licence](LICENSE).
 
 ## Installation
