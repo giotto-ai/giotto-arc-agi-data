@@ -1,0 +1,24 @@
+[project]
+name = "giotto-arc-data"
+version = "0.0.1"
+description = "Utils for reading synthetic ARC-AGI dataset by Giotto.ai."
+authors = [
+    {name = 'Matteo Caorsi', email = "m.caorsi@giotto.ai"},
+    {name = 'Matteo Bonotto', email = "m.bonotto@giotto.ai"},
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0,<2.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = ">=3.11, <3.15"
+numpy = "*"
+black = "*"
+mypy = "*"
+pytest = "*"
+matplotlib = "~3.10.7"
+ipykernel = "~7.1.0"
+tqdm = "~4.67.1"
+pyarrow = "~23.0.0"
+orjson = "~3.11.7"

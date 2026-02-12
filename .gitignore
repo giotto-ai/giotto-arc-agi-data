@@ -1,0 +1,6 @@
+venv
+notebooks/**.png
+.vscode
+**.pyc
+poetry.lock
+dataset
