@@ -1,7 +1,8 @@
+# Copyright © 2026 Giotto.ai SA. All rights reserved.
 from pathlib import Path
 import requests  # type: ignore
 from tqdm import tqdm  # type: ignore
-import os
+from typing import Dict, Any
 
 
 def zenodo_base_url(use_sandbox: bool = False) -> str:
@@ -11,8 +12,6 @@ def zenodo_base_url(use_sandbox: bool = False) -> str:
 def download_zenodo_record(
     record_id: int,
     out_dir: str | Path,
-    # *,
-    # access_token: str | None = None,
     use_sandbox: bool = False,
 ):
     base = zenodo_base_url(use_sandbox)
@@ -20,9 +19,7 @@ def download_zenodo_record(
         out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    headers = {}
-    # if access_token is not None:
-    # headers["Authorization"] = f"Bearer {os.environ['ZENODO_ACCESS_TOKEN']}"
+    headers: Dict[Any, Any] = {}
 
     # Get record metadata
     r = requests.get(f"{base}/api/records/{record_id}", headers=headers, timeout=60)
@@ -41,9 +38,10 @@ def download_zenodo_record(
             resp.raise_for_status()
             total = int(resp.headers.get("Content-Length", 0))
 
-            with open(out_path, "wb") as fp, tqdm(
-                total=total, unit="B", unit_scale=True, unit_divisor=1024
-            ) as bar:
+            with (
+                open(out_path, "wb") as fp,
+                tqdm(total=total, unit="B", unit_scale=True, unit_divisor=1024) as bar,
+            ):
                 for chunk in resp.iter_content(chunk_size=1024 * 1024):
                     if chunk:
                         fp.write(chunk)

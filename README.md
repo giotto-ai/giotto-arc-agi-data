@@ -12,7 +12,9 @@ pip install .
 
 ## Dataset
 The dataset contains 4 different parquet files, depending on how we generated the data:
-- `atuomata`: used cellular automata applied at the pixel level to transform the tasks via a consistet transformation that is not breaking the rule;
+- `seeds_original`: the original ARC-AGI 1 + ARC-AGI 2;
+- `seeds_additional`: ARC-AGI tasks generated manually;
+- `atuomata`: used cellular automata applied at the pixel level to transform the tasks via a consistent transformation that is not breaking the rule;
 - `dsl_random`: apply random transformations to the tasks (e.g. random color permutations, padding, adding a metagrid);
 - `dsl_deterministic`: apply all geometric transformations to the input or the output grids;
 - `rearc`: coded functions for procedurally generate tasks following a griven rule. Inspiration taken from [this repo](https://github.com/michaelhodel/re-arc).
@@ -21,6 +23,8 @@ See the table below for more info on the shards's sizes and content.
 
 | name              | no. of tasks | size [MB] |
 | ----------------- | ------------ | --------- |
+| seeds_original    | 1141         | <1        |
+| seeds_additional  | 4664         | 5.0       |
 | automata          | 708437       | 655.0     |
 | dsl_random        | 141376       | 334.3     |
 | dsl_deterministic | 150510       | 129.1     |
@@ -52,8 +56,21 @@ for task_id, task in data_iterator:
 print(f'Total tasks: {count}')
 ```
 
-Expected output:
+Expected output (the downloading info are supposed to show up only at the first execution of the cell):
 ```
+Downloading seeds_additional.parquet
+100%|██████████| 5.05M/5.05M [00:00<00:00, 28.5MB/s]
+Downloading dsl_random.parquet
+100%|██████████| 116M/116M [00:01<00:00, 85.8MB/s] 
+Downloading rearc.parquet
+100%|██████████| 334M/334M [00:04<00:00, 78.3MB/s] 
+Downloading automata.parquet
+100%|██████████| 655M/655M [00:08<00:00, 83.4MB/s] 
+Downloading dsl_deterministic.parquet
+100%|██████████| 129M/129M [00:01<00:00, 88.9MB/s] 
+Downloading seeds_original.parquet
+100%|██████████| 873k/873k [00:00<00:00, 6.05MB/s]
+Download complete.
 Total tasks: 101
 ```
 ![Alt text](images/task.png)

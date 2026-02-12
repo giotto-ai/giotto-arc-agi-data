@@ -1,4 +1,5 @@
-from giotto_arc_data.load import load_dataset
+# Copyright © 2026 Giotto.ai SA. All rights reserved.
+from giotto_arc_agi_data.load import load_dataset
 
 
 def test_load():

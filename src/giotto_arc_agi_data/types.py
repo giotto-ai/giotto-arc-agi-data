@@ -1,3 +1,4 @@
+# Copyright © 2026 Giotto.ai SA. All rights reserved.
 from typing import Iterator, Tuple, Any, Dict, TypeAlias, List
 
 JSONTask: TypeAlias = Dict[str, List[Dict[str, List[List[int]]]]]

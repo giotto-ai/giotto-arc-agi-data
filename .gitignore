@@ -6,3 +6,4 @@ poetry.lock
 dataset
 build
 */**.egg-info
+.pytest_cache

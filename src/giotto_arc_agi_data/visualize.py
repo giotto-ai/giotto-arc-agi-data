@@ -1,3 +1,4 @@
+# Copyright © 2026 Giotto.ai SA. All rights reserved.
 from typing import Any, Dict, List, Tuple, Union, Optional
 
 from pathlib import Path

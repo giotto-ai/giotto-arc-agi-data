@@ -1,3 +1,4 @@
+# Copyright © 2026 Giotto.ai SA. All rights reserved.
 from typing import Iterator, List, Optional
 from pathlib import Path
 from tqdm import tqdm  # type: ignore
