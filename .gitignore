@@ -4,3 +4,5 @@ notebooks/**.png
 **.pyc
 poetry.lock
 dataset
+build
+*/**.egg-info

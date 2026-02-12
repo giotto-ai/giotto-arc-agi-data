@@ -3,11 +3,11 @@ Official repository to access the Giotto Arc Dataset (link to Zenodo here...).
 
 ## Installation
 ```shell
+git clone git@github.com:giotto-ai/giotto-arc-agi-data.git
+cd giotto-arc-agi-data
 python3.11 -m venv venv
 source venv/bin/activate
-pip install poetry
-poetry config virtualenvs.create false
-poetry install git+https://github.com/giotto-ai/giotto-arc-agi-data
+pip install .
 ```
 
 ## Dataset
