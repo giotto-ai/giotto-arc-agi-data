@@ -1,5 +1,5 @@
 # Giotto ARC-AGI Data
-Official repository to access the Giotto Arc Dataset. The dataset is hosted at Zenodo ([here](https://zenodo.org/records/18508333)) and is publicly available via [this licence](LICENSE).
+Official repository to access the Giotto.ai ARC-AGI Dataset. The dataset is hosted at Zenodo ([here](https://zenodo.org/records/18508333)) and is publicly available via [this licence](LICENSE).
 
 ## Installation
 ```shell
@@ -11,13 +11,13 @@ pip install .
 ```
 
 ## Dataset
-The dataset contains 4 different parquet files, depending on how we generated the data:
-- `seeds_original`: the original ARC-AGI 1 + ARC-AGI 2;
-- `seeds_additional`: ARC-AGI tasks generated manually;
-- `automata`: used cellular automata applied at the pixel level to transform the tasks via a consistent transformation that is not breaking the rule;
-- `dsl_random`: apply random transformations to the tasks (e.g. random color permutations, padding, adding a metagrid);
-- `dsl_deterministic`: apply all geometric transformations to the input or the output grids;
-- `rearc`: coded functions for procedurally generate tasks following a griven rule. Inspiration taken from [this repo](https://github.com/michaelhodel/re-arc).
+The dataset contains 6 different parquet files, depending on how we generated the data:
+- `seeds_original`: the original ARC-AGI 1 + ARC-AGI 2 tasks;
+- `seeds_additional`: ARC-AGI tasks generated manually by our team;
+- `automata`: we used cellular automata applied at the pixel level to transform the tasks via a consistent transformation that should not be breaking the rule;
+- `dsl_random`: we apply random non-geometric transformations to the tasks (e.g. random color permutations, padding, adding a metagrid);
+- `dsl_deterministic`: apply all geometric transformations to the input or the output grids (rotations and flips);
+- `rearc`: coded functions for procedurally generating tasks following a given rule. Inspiration taken from [this repo](https://github.com/michaelhodel/re-arc).
 
 See the table below for more info on the shards's sizes and content.
 
@@ -33,10 +33,10 @@ See the table below for more info on the shards's sizes and content.
 
 
 ## Usage
-See [this notebook](notebooks/example_usage.ipynb) to see how to use the dataset.
+Check [this notebook](notebooks/example_usage.ipynb) to see how to use the dataset.
 
 ### Load dataset as a stream (recommended)
-We recommend to load the dataset an `Iterator`, because loading it fully can take quite some time and a lot of RAM. 
+We recommend to load the dataset as an `Iterator`, because loading it in full can take quite some time and use a lot of RAM. 
 
 ```python
 data_iterator = load_dataset(stream=True)
